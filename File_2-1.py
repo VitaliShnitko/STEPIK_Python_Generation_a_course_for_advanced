@@ -8,17 +8,48 @@
 # остаток от деления числа a на b;
 # корень квадратный из суммы их 10-х степеней
 
-def is_result(a, b):
-    summa = a + b
-    difference = a - b
-    multi = a * b
-    div = a / b
-    division = a // b
-    ost_division = a % b
-    square_root = ((a ** 10) + (b ** 10)) ** 0.5
+# def is_result(a, b):
+#     summa = a + b
+#     difference = a - b
+#     multi = a * b
+#     div = a / b
+#     division = a // b
+#     ost_division = a % b
+#     square_root = ((a ** 10) + (b ** 10)) ** 0.5
+#
+#     print(summa, difference, multi, div, division, ost_division, square_root, sep='\n')
+#
+# x, y = int(input()), int(input())
+#
+# is_result(x, y)
 
-    print(summa, difference, multi, div, division, ost_division, square_root, sep='\n')
 
-x, y = int(input()), int(input())
+# Напишите программу для вычисления и
+# оценки индекса массы тела (ИМТ) человека.
+# ИМТ показывает весит человек больше
+# или меньше нормы для своего роста.
+# ИМТ человека рассчитывают по формуле: ИМТ = масса / рост * рост
+# где масса измеряется в килограммах, а рост — в метрах.
+# Масса человека считается оптимальной, если его ИМТ находится между 18.5 и 25.
+# Если ИМТ меньше 18.5, то считается, что человек весит ниже нормы.
+# Если значение ИМТ больше 25, то считается, что человек весит больше нормы.
+# Программа должна вывести "Оптимальная масса", если ИМТ находится между 18.5 и 25 (включительно).
+# "Недостаточная масса", если ИМТ меньше 18.5 и "Избыточная масса", если значение ИМТ больше 25.
 
-is_result(x, y)
+def is_calculating(a, b):
+    b_m_i = a / (b * b)
+    if 18.5 <= b_m_i <= 25:
+        print('Оптимальная масса')
+    elif b_m_i >= 25:
+        print('Избыточная масса')
+    else:
+        print('Недостаточная масса')
+
+mass, height = float(input()), float(input())
+
+is_calculating(mass, height)
+
+
+
+
+
