@@ -73,40 +73,60 @@
 # Ваша программа должна корректно работать с любым годом,
 # не только теми, что перечислены в таблице.
 
-# 1 решение
-year = int(input())
-list = ["Обезьяна", "Петух", "Собака", "Свинья", "Крыса", "Бык", "Тигр", "Заяц", "Дракон", "Змея", "Лошадь", "Овца"]
+# # 1 решение
+# year = int(input())
+# list = ["Обезьяна", "Петух", "Собака", "Свинья", "Крыса", "Бык", "Тигр", "Заяц", "Дракон", "Змея", "Лошадь", "Овца"]
+#
+# if year % 12 == 0:
+#     print(list[0])
+# elif year % 12 == 1:
+#     print(list[1])
+# elif year % 12 == 2:
+#     print(list[2])
+# elif year % 12 == 3:
+#     print(list[3])
+# elif year % 12 == 4:
+#     print(list[4])
+# elif year % 12 == 5:
+#     print(list[5])
+# elif year % 12 == 6:
+#     print(list[6])
+# elif year % 12 == 7:
+#     print(list[7])
+# elif year % 12 == 8:
+#     print(list[8])
+# elif year % 12 == 9:
+#     print(list[9])
+# elif year % 12 == 10:
+#     print(list[10])
+# elif year % 12 == 11:
+#     print(list[11])
+#
+# # 2 решение
+# year = int(input())
+# list = ['Обезьяна', 'Петух', 'Собака', 'Свинья', 'Крыса', 'Бык', 'Тигр', 'Заяц', 'Дракон', 'Змея', 'Лошадь', 'Овца']
+#
+# print(list[year % 12])
+#
+#
+# Дано пятизначное или шестизначное натуральное число.
+# Напишите программу, которая изменит порядок его последних пяти цифр на обратный.
 
-if year % 12 == 0:
-    print(list[0])
-elif year % 12 == 1:
-    print(list[1])
-elif year % 12 == 2:
-    print(list[2])
-elif year % 12 == 3:
-    print(list[3])
-elif year % 12 == 4:
-    print(list[4])
-elif year % 12 == 5:
-    print(list[5])
-elif year % 12 == 6:
-    print(list[6])
-elif year % 12 == 7:
-    print(list[7])
-elif year % 12 == 8:
-    print(list[8])
-elif year % 12 == 9:
-    print(list[9])
-elif year % 12 == 10:
-    print(list[10])
-elif year % 12 == 11:
-    print(list[11])
+# 1 решение
+num = input()
+
+if len(num) == 5:
+    if num[::-1].startswith('0'):
+        print(num[::-1].replace('0', ''))
+    else:
+        print(num[::-1])
+elif len(num) == 6:
+    print(num[0:1] + num[:0:-1])
+
 
 # 2 решение
-year = int(input())
-list = ['Обезьяна', 'Петух', 'Собака', 'Свинья', 'Крыса', 'Бык', 'Тигр', 'Заяц', 'Дракон', 'Змея', 'Лошадь', 'Овца']
-
-print(list[year % 12])
+num = input()
+print(int(num[:-5] + num[-5:][::-1]))
 
 
 
