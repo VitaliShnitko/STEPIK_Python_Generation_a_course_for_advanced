@@ -1,4 +1,5 @@
-# На вход программе подаются два целых числа aa и bb. Напишите программу, которая выводит:
+# На вход программе подаются два целых числа aa и bb.
+# Напишите программу, которая выводит:
 #
 # сумму чисел a и b;
 # разность чисел a и b;
@@ -8,20 +9,20 @@
 # остаток от деления числа a на b;
 # корень квадратный из суммы их 10-х степеней
 
-# def is_result(a, b):
-#     summa = a + b
-#     difference = a - b
-#     multi = a * b
-#     div = a / b
-#     division = a // b
-#     ost_division = a % b
-#     square_root = ((a ** 10) + (b ** 10)) ** 0.5
-#
-#     print(summa, difference, multi, div, division, ost_division, square_root, sep='\n')
-#
-# x, y = int(input()), int(input())
-#
-# is_result(x, y)
+def is_result(a, b):
+    summa = a + b
+    difference = a - b
+    multi = a * b
+    div = a / b
+    division = a // b
+    ost_division = a % b
+    square_root = ((a ** 10) + (b ** 10)) ** 0.5
+
+    print(summa, difference, multi, div, division, ost_division, square_root, sep='\n')
+
+x, y = int(input()), int(input())
+
+is_result(x, y)
 
 
 # Напишите программу для вычисления и
@@ -36,18 +37,18 @@
 # Программа должна вывести "Оптимальная масса", если ИМТ находится между 18.5 и 25 (включительно).
 # "Недостаточная масса", если ИМТ меньше 18.5 и "Избыточная масса", если значение ИМТ больше 25.
 
-# def is_calculating(a, b):
-#     b_m_i = a / (b * b)
-#     if 18.5 <= b_m_i <= 25:
-#         print('Оптимальная масса')
-#     elif b_m_i >= 25:
-#         print('Избыточная масса')
-#     else:
-#         print('Недостаточная масса')
-#
-# mass, height = float(input()), float(input())
-#
-# is_calculating(mass, height)
+def is_calculating(a, b):
+    b_m_i = a / (b * b)
+    if 18.5 <= b_m_i <= 25:
+        print('Оптимальная масса')
+    elif b_m_i >= 25:
+        print('Избыточная масса')
+    else:
+        print('Недостаточная масса')
+
+mass, height = float(input()), float(input())
+
+is_calculating(mass, height)
 
 
 # Дана строка текста.
@@ -55,14 +56,14 @@
 # что один любой символ (в том числе пробел) стоит 60 копеек.
 # Ответ дайте в рублях и копейках в соответствии с примерами.
 
-# text = len(input()) * 60
-# print(text // 100, 'р. ', text % 100, 'коп. ', sep='')
+text = len(input()) * 60
+print(text // 100, 'р. ', text % 100, 'коп. ', sep='')
 
 
 # Дана строка, состоящая из слов, разделенных пробелами.
 # Напишите программу, которая подсчитывает количество слов в этой строке.
 
-# print(len(input().split()))
+print(len(input().split()))
 
 
 # Китайский гороскоп назначает животным годы в 12-летнем цикле.
@@ -74,59 +75,59 @@
 # не только теми, что перечислены в таблице.
 
 # # 1 решение
-# year = int(input())
-# list = ["Обезьяна", "Петух", "Собака", "Свинья", "Крыса", "Бык", "Тигр", "Заяц", "Дракон", "Змея", "Лошадь", "Овца"]
-#
-# if year % 12 == 0:
-#     print(list[0])
-# elif year % 12 == 1:
-#     print(list[1])
-# elif year % 12 == 2:
-#     print(list[2])
-# elif year % 12 == 3:
-#     print(list[3])
-# elif year % 12 == 4:
-#     print(list[4])
-# elif year % 12 == 5:
-#     print(list[5])
-# elif year % 12 == 6:
-#     print(list[6])
-# elif year % 12 == 7:
-#     print(list[7])
-# elif year % 12 == 8:
-#     print(list[8])
-# elif year % 12 == 9:
-#     print(list[9])
-# elif year % 12 == 10:
-#     print(list[10])
-# elif year % 12 == 11:
-#     print(list[11])
-#
+year = int(input())
+list = ["Обезьяна", "Петух", "Собака", "Свинья", "Крыса", "Бык", "Тигр", "Заяц", "Дракон", "Змея", "Лошадь", "Овца"]
+
+if year % 12 == 0:
+    print(list[0])
+elif year % 12 == 1:
+    print(list[1])
+elif year % 12 == 2:
+    print(list[2])
+elif year % 12 == 3:
+    print(list[3])
+elif year % 12 == 4:
+    print(list[4])
+elif year % 12 == 5:
+    print(list[5])
+elif year % 12 == 6:
+    print(list[6])
+elif year % 12 == 7:
+    print(list[7])
+elif year % 12 == 8:
+    print(list[8])
+elif year % 12 == 9:
+    print(list[9])
+elif year % 12 == 10:
+    print(list[10])
+elif year % 12 == 11:
+    print(list[11])
+
 # # 2 решение
-# year = int(input())
-# list = ['Обезьяна', 'Петух', 'Собака', 'Свинья', 'Крыса', 'Бык', 'Тигр', 'Заяц', 'Дракон', 'Змея', 'Лошадь', 'Овца']
-#
-# print(list[year % 12])
-#
-#
+year = int(input())
+list = ['Обезьяна', 'Петух', 'Собака', 'Свинья', 'Крыса', 'Бык', 'Тигр', 'Заяц', 'Дракон', 'Змея', 'Лошадь', 'Овца']
+
+print(list[year % 12])
+
+
 # Дано пятизначное или шестизначное натуральное число.
 # Напишите программу, которая изменит порядок его последних пяти цифр на обратный.
 
 # # 1 решение
-# num = input()
-#
-# if len(num) == 5:
-#     if num[::-1].startswith('0'):
-#         print(num[::-1].replace('0', ''))
-#     else:
-#         print(num[::-1])
-# elif len(num) == 6:
-#     print(num[0:1] + num[:0:-1])
-#
-#
+num = input()
+
+if len(num) == 5:
+    if num[::-1].startswith('0'):
+        print(num[::-1].replace('0', ''))
+    else:
+        print(num[::-1])
+elif len(num) == 6:
+    print(num[0:1] + num[:0:-1])
+
+
 # # 2 решение
-# num = input()
-# print(int(num[:-5] + num[-5:][::-1]))
+num = input()
+print(int(num[:-5] + num[-5:][::-1]))
 
 
 # На вход программе подаётся натуральное число. Напишите программу,
@@ -134,18 +135,18 @@
 # стандартным американским соглашением о запятых в больших числах.
 
 ## 1 решение
-# num = int(input())
-# print(f'{num:,}')
+num = int(input())
+print(f'{num:,}')
 
 ## 2 решение
-# num = input()
-# s = []
-#
-# while len(num) > 0:
-#     s.append(num[-3:])
-#     num = num[:-3]
-#
-# print(",".join(s[::-1]))
+num = input()
+s = []
+
+while len(num) > 0:
+    s.append(num[-3:])
+    num = num[:-3]
+
+print(",".join(s[::-1]))
 
 
 # n человек, пронумерованных числами от 1 до n, стоят в кругу.
