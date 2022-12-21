@@ -25,13 +25,26 @@
 # которые больше предшествующего им в этом списке числа,
 # то есть, стоят вслед за меньшим числом.
 
-num = [int(i) for i in input().split()]
-count = 0
+# num = [int(i) for i in input().split()]
+# count = 0
+#
+# for i in range(1, len(num)):
+#     if int(num[i]) > int(num[i-1]):
+#         count += 1
+# print(count)
 
-for i in range(1, len(num)):
-    if int(num[i]) > int(num[i-1]):
-        count += 1
-print(count)
+
+# На вход программе подается строка текста из натуральных чисел.
+# Из элементов строки формируется список чисел.
+# Напишите программу, которая меняет местами
+# соседние элементы списка (a[0] c a[1], a[2] c a[3] и т.д.).
+# Если в списке нечетное количество элементов,
+# то последний остается на своем месте.
+
+num = input().split()
+for i in range(0, len(num)-1, 2):
+    num[i], num[i+1] = num[i+1], num[i]
+print(*num)
 
 
 
