@@ -151,16 +151,30 @@
 # (необязательно рядом стоящие буквы, главное наличие последовательности букв),
 # то холодильник заражен и нужно вывести номер холодильника, нумерация начинается с единицы
 
-virus = 'anton'
-for i in range(1, int(input()) + 1):
-    s = input()
-    res = ''
-    for x in virus:
-        if x in s:
-            res += x
-            s = s[s.find(x):]
-    if res == virus:
-        print(i, end=' ')
+# virus = 'anton'
+# for i in range(1, int(input()) + 1):
+#     s = input()
+#     res = ''
+#     for x in virus:
+#         if x in s:
+#             res += x
+#             s = s[s.find(x):]
+#     if res == virus:
+#         print(i, end=' ')
+
+
+# Необходимо написать программу, реализующую алгоритм написания этой песни.
+# Алгоритм выводит в конце предложения следующую в алфавитном порядке букву,
+# если она встречается в строке текста, а очередную строку отображает уже без этой буквы.
+
+
+word = input() + ' запретил букву'
+alpha = [chr(i) for i in range(1072, 1104) if chr(i) != 'ё']
+
+for x in alpha:
+    if x in word:
+        print(word, x)
+        word = word.replace(x, '').replace('  ', ' ').strip()
 
 
 
