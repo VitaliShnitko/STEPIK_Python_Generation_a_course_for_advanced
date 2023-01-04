@@ -80,19 +80,39 @@
 # В последующих nn строках вводятся целые числа, составляющие набор (могут повторяться).
 # Затем следует целое число, которое является или не является произведением двух каких-то чисел из набора.
 
-n = int(input())
-a = [input() for i in range(n)]
-pr = int(input())
-count = 0
+# n = int(input())
+# a = [input() for i in range(n)]
+# pr = int(input())
+# count = 0
+#
+# for i in range(len(a)):
+#     for j in range(len(a)):
+#         if int(a[i]) * int(a[j]) == pr and i != j:
+#             count += 1
+#         else:
+#             continue
+# if count > 0:
+#     print('ДА')
+# else:
+#     print('НЕТ')
 
-for i in range(len(a)):
-    for j in range(len(a)):
-        if int(a[i])*int(a[j]) == pr and i != j:
-            count += 1
-        else:
-            continue
-if count > 0:
-    print('ДА')
+
+# Тимур и Руслан пытаются разделить фронт работы по курсу "Python для профессионалов".
+# Для этого они решили сыграть в камень, ножницы и бумагу.
+# Помогите ребятам бросить честный жребий и определить,
+# кто будет делать очередной модуль нового курса.
+
+timur = input()
+ruslan = input()
+
+if ruslan == timur:
+    print('ничья')
+elif timur == 'камень' and ruslan == 'ножницы':
+    print('Тимур')
+elif timur == 'ножницы' and ruslan == 'бумага':
+    print('Тимур')
+elif timur == 'бумага' and ruslan == 'камень':
+    print('Тимур')
 else:
-    print('НЕТ')
+    print('Руслан')
 
