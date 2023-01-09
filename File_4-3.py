@@ -26,6 +26,7 @@
 # В этом треугольнике на вершине и по бокам стоят единицы.
 # Каждое число равно сумме двух расположенных над ним чисел.
 
+# 1 решение
 n = int(input())
 lst = [[1]]
 for i in range(1, n + 1):
@@ -36,5 +37,13 @@ for i in range(1, n + 1):
     lst.append(row)
 
 print(lst[-1])
+
+# 2 решение
+from math import factorial
+n = int(input())
+b = []
+for i in range(n+1):
+    b.append(int((factorial(n))/(factorial(i)*factorial(n-i))))
+print(b)
 
 
