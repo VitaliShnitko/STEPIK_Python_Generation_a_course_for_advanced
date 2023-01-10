@@ -50,14 +50,29 @@
 # На вход программе подается натуральное число n.
 # Напишите программу, которая выводит первые nn строк треугольника Паскаля.
 
-from math import factorial
-n = int(input())
-for i in range(0, n):
-    b = []
-    for j in range(0, n):
-        if i < j:
-            break
-        else:
-            b.append(int((factorial(i))/(factorial(j)*factorial(i-j))))
-    print(*b)
+# from math import factorial
+# n = int(input())
+# for i in range(0, n):
+#     b = []
+#     for j in range(0, n):
+#         if i < j:
+#             break
+#         else:
+#             b.append(int((factorial(i))/(factorial(j)*factorial(i-j))))
+#     print(*b)
+
+
+
+# На вход программе подается строка текста, содержащая символы. Напишите программу,
+# которая упаковывает последовательности одинаковых символов заданной строки в подсписки.
+
+s = input().split()
+res = [[s[0]]]
+for i in range(1, len(s)):
+    if s[i] == s[i - 1]:
+        res[-1].append(s[i])
+    else:
+        res.append([s[i]])
+print(res)
+
 
