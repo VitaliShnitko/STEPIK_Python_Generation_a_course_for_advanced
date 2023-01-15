@@ -37,6 +37,7 @@
 # но уже поменяв местами строки со столбцами:
 # первая строка выводится как первый столбец, и так далее.
 
+# 1 решение
 a = []
 n = int(input())    #stroka
 m = int(input())    #stolbec
@@ -55,4 +56,12 @@ for c in range(m):                   # вывод столцов/строк
     for r in range(n):
         print(a[r][c], end=' ')
     print()
+
+
+# 1 решение
+n, m = int(input()), int(input())
+w = [[input() for _ in range(m)] for _ in range(n)]
+[print(*r) for r in w]
+print()
+[print(*[w[j][i] for j in range(n)]) for i in range(m)]
 
