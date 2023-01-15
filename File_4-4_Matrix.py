@@ -37,31 +37,50 @@
 # но уже поменяв местами строки со столбцами:
 # первая строка выводится как первый столбец, и так далее.
 
-# 1 решение
-a = []
-n = int(input())    #stroka
-m = int(input())    #stolbec
+# # 1 решение
+# a = []
+# n = int(input())    #stroka
+# m = int(input())    #stolbec
+#
+# for i in range(n):
+#     matrix = []
+#     for i in range(m):
+#         matrix.append(input())
+#     a.append(matrix)
+# for i in a:
+#     print(*i)
+#
+# print()
+#
+# for c in range(m):                   # вывод столцов/строк
+#     for r in range(n):
+#         print(a[r][c], end=' ')
+#     print()
+#
+#
+# # 1 решение
+# n, m = int(input()), int(input())
+# w = [[input() for _ in range(m)] for _ in range(n)]
+# [print(*r) for r in w]
+# print()
+# [print(*[w[j][i] for j in range(n)]) for i in range(m)]
+
+
+# Следом квадратной матрицы называется сумма элементов главной диагонали.
+# Напишите программу, которая выводит след заданной квадратной матрицы.
+
+n = int(input())
+matrix = []
 
 for i in range(n):
-    matrix = []
-    for i in range(m):
-        matrix.append(input())
-    a.append(matrix)
-for i in a:
-    print(*i)
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
 
-print()
+s = 0
+for i in range(n):
+    for j in range(n):
+        if i == j:
+            s += matrix[i][j]
+print(s)
 
-for c in range(m):                   # вывод столцов/строк
-    for r in range(n):
-        print(a[r][c], end=' ')
-    print()
-
-
-# 1 решение
-n, m = int(input()), int(input())
-w = [[input() for _ in range(m)] for _ in range(n)]
-[print(*r) for r in w]
-print()
-[print(*[w[j][i] for j in range(n)]) for i in range(m)]
 
