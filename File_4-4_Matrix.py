@@ -69,6 +69,24 @@
 # Следом квадратной матрицы называется сумма элементов главной диагонали.
 # Напишите программу, которая выводит след заданной квадратной матрицы.
 
+# n = int(input())
+# matrix = []
+#
+# for i in range(n):
+#     temp = [int(num) for num in input().split()]
+#     matrix.append(temp)
+#
+# s = 0
+# for i in range(n):
+#     for j in range(n):
+#         if i == j:
+#             s += matrix[i][j]
+# print(s)
+
+
+# Напишите программу, которая выводит количество элементов квадратной матрицы в каждой строке,
+# больших среднего арифметического элементов данной строки.
+
 n = int(input())
 matrix = []
 
@@ -76,11 +94,12 @@ for i in range(n):
     temp = [int(num) for num in input().split()]
     matrix.append(temp)
 
-s = 0
 for i in range(n):
+    count = 0
+    s = 0
     for j in range(n):
-        if i == j:
-            s += matrix[i][j]
-print(s)
-
-
+        s += matrix[i][j]
+    for r in range(n):
+        if matrix[i][r] > s / n:
+            count += 1
+    print(count)
