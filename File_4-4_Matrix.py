@@ -5,6 +5,9 @@
 #
 # Напишите программу, которая сначала считывает элементы матрицы один за другим,
 # затем выводит их в виде матрицы.
+
+# 1 решение
+
 a = []
 n = int(input())    #stroka
 m = int(input())    #stolbec
@@ -16,4 +19,10 @@ for i in range(n):
     a.append(matrix)
 for i in a:
     print(*i)
+
+# 2 решение
+n = int(input())
+m = int(input())
+
+[print(*[input() for i in range(m)]) for i in range(n)]
 
