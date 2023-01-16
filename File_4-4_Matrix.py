@@ -108,15 +108,33 @@
 # Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
 # Нижнюю часть.
 
+# n = int(input())
+# matrix = []
+# max_id = []
+# for i in range(n):
+#     temp = [int(num) for num in input().split()]
+#     matrix.append(temp)
+#
+# for i in range(n):
+#     for j in range(n):
+#         if i >= j:
+#             max_id.append(matrix[i][j])
+# print(max(max_id))
+
+
+# Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
+
 n = int(input())
 matrix = []
 max_id = []
-for i in range(n):
-    temp = [int(num) for num in input().split()]
+for _ in range(n):
+    temp = [int(i) for i in input().split()]
     matrix.append(temp)
 
 for i in range(n):
     for j in range(n):
-        if i >= j:
+        if (i >= j) and (i <= n -1 - j):
+            max_id.append(matrix[i][j])
+        if (i <= j) and (i >= n - 1 - j):
             max_id.append(matrix[i][j])
 print(max(max_id))
