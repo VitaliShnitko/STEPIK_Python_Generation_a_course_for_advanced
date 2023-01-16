@@ -6,25 +6,25 @@
 # Напишите программу, которая сначала считывает элементы матрицы один за другим,
 # затем выводит их в виде матрицы.
 
-# # 1 решение
+# 1 решение
+
+a = []
+n = int(input())    #stroka
+m = int(input())    #stolbec
+
+for i in range(n):
+    matrix = []
+    for i in range(m):
+        matrix.append(input())
+    a.append(matrix)
+for i in a:                         # вывод строк/столцов
+    print(*i)
 #
-# a = []
-# n = int(input())    #stroka
-# m = int(input())    #stolbec
-#
-# for i in range(n):
-#     matrix = []
-#     for i in range(m):
-#         matrix.append(input())
-#     a.append(matrix)
-# for i in a:                         # вывод строк/столцов
-#     print(*i)
-#
-# # 2 решение
-# n = int(input())
-# m = int(input())
-#
-# [print(*[input() for i in range(m)]) for i in range(n)]
+# 2 решение
+n = int(input())
+m = int(input())
+
+[print(*[input() for i in range(m)]) for i in range(n)]
 
 
 # На вход программе подаются два натуральных числа n и m,
@@ -37,107 +37,107 @@
 # но уже поменяв местами строки со столбцами:
 # первая строка выводится как первый столбец, и так далее.
 
-# # 1 решение
-# a = []
-# n = int(input())    #stroka
-# m = int(input())    #stolbec
+# 1 решение
+a = []
+n = int(input())    #stroka
+m = int(input())    #stolbec
+
+for i in range(n):
+    matrix = []
+    for i in range(m):
+        matrix.append(input())
+    a.append(matrix)
+for i in a:
+    print(*i)
+
+print()
+
+for c in range(m):                   # вывод столцов/строк
+    for r in range(n):
+        print(a[r][c], end=' ')
+    print()
 #
-# for i in range(n):
-#     matrix = []
-#     for i in range(m):
-#         matrix.append(input())
-#     a.append(matrix)
-# for i in a:
-#     print(*i)
 #
-# print()
-#
-# for c in range(m):                   # вывод столцов/строк
-#     for r in range(n):
-#         print(a[r][c], end=' ')
-#     print()
-#
-#
-# # 1 решение
-# n, m = int(input()), int(input())
-# w = [[input() for _ in range(m)] for _ in range(n)]
-# [print(*r) for r in w]
-# print()
-# [print(*[w[j][i] for j in range(n)]) for i in range(m)]
+# 1 решение
+n, m = int(input()), int(input())
+w = [[input() for _ in range(m)] for _ in range(n)]
+[print(*r) for r in w]
+print()
+[print(*[w[j][i] for j in range(n)]) for i in range(m)]
 
 
 # Следом квадратной матрицы называется сумма элементов главной диагонали.
 # Напишите программу, которая выводит след заданной квадратной матрицы.
 
-# n = int(input())
-# matrix = []
-#
-# for i in range(n):
-#     temp = [int(num) for num in input().split()]
-#     matrix.append(temp)
-#
-# s = 0
-# for i in range(n):
-#     for j in range(n):
-#         if i == j:
-#             s += matrix[i][j]
-# print(s)
+n = int(input())
+matrix = []
+
+for i in range(n):
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
+
+s = 0
+for i in range(n):
+    for j in range(n):
+        if i == j:
+            s += matrix[i][j]
+print(s)
 
 
 # Напишите программу, которая выводит количество элементов квадратной матрицы в каждой строке,
 # больших среднего арифметического элементов данной строки.
 
-# n = int(input())
-# matrix = []
-#
-# for i in range(n):
-#     temp = [int(num) for num in input().split()]
-#     matrix.append(temp)
-#
-# for i in range(n):
-#     count = 0
-#     s = 0
-#     for j in range(n):
-#         s += matrix[i][j]
-#     for r in range(n):
-#         if matrix[i][r] > s / n:
-#             count += 1
-#     print(count)
+n = int(input())
+matrix = []
+
+for i in range(n):
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
+
+for i in range(n):
+    count = 0
+    s = 0
+    for j in range(n):
+        s += matrix[i][j]
+    for r in range(n):
+        if matrix[i][r] > s / n:
+            count += 1
+    print(count)
 
 
 # Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
 # Нижнюю часть.
 
-# n = int(input())
-# matrix = []
-# max_id = []
-# for i in range(n):
-#     temp = [int(num) for num in input().split()]
-#     matrix.append(temp)
-#
-# for i in range(n):
-#     for j in range(n):
-#         if i >= j:
-#             max_id.append(matrix[i][j])
-# print(max(max_id))
+n = int(input())
+matrix = []
+max_id = []
+for i in range(n):
+    temp = [int(num) for num in input().split()]
+    matrix.append(temp)
+
+for i in range(n):
+    for j in range(n):
+        if i >= j:
+            max_id.append(matrix[i][j])
+print(max(max_id))
 
 
 # Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
 
-# n = int(input())
-# matrix = []
-# max_id = []
-# for i in range(n):
-#     temp = [int(i) for i in input().split()]
-#     matrix.append(temp)
-#
-# for i in range(n):
-#     for j in range(n):
-#         if (i >= j) and (i <= n - 1 - j):
-#             max_id.append(matrix[i][j])
-#         if (i <= j) and (i >= n - 1 - j):
-#             max_id.append(matrix[i][j])
-# print(max(max_id))
+n = int(input())
+matrix = []
+max_id = []
+for i in range(n):
+    temp = [int(i) for i in input().split()]
+    matrix.append(temp)
+
+for i in range(n):
+    for j in range(n):
+        if (i >= j) and (i <= n - 1 - j):
+            max_id.append(matrix[i][j])
+        if (i <= j) and (i >= n - 1 - j):
+            max_id.append(matrix[i][j])
+print(max(max_id))
 
 
 # Квадратная матрица разбивается на четыре четверти,
