@@ -124,17 +124,48 @@
 
 # Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
 
+# n = int(input())
+# matrix = []
+# max_id = []
+# for i in range(n):
+#     temp = [int(i) for i in input().split()]
+#     matrix.append(temp)
+#
+# for i in range(n):
+#     for j in range(n):
+#         if (i >= j) and (i <= n - 1 - j):
+#             max_id.append(matrix[i][j])
+#         if (i <= j) and (i >= n - 1 - j):
+#             max_id.append(matrix[i][j])
+# print(max(max_id))
+
+
+# Квадратная матрица разбивается на четыре четверти,
+# ограниченные главной и побочной диагоналями: верхнюю, нижнюю, левую и правую.
+# Напишите программу, которая вычисляет сумму элементов:
+# верхней четверти; правой четверти; нижней четверти; левой четверти.
+
 n = int(input())
-matrix = []
-max_id = []
-for _ in range(n):
-    temp = [int(i) for i in input().split()]
-    matrix.append(temp)
+matrix = [[int(j) for j in input().split()] for _ in range(n)]
+
+verh_ch = []
+pr_ch = []
+niz_ch = []
+lv_ch = []
 
 for i in range(n):
     for j in range(n):
-        if (i >= j) and (i <= n -1 - j):
-            max_id.append(matrix[i][j])
-        if (i <= j) and (i >= n - 1 - j):
-            max_id.append(matrix[i][j])
-print(max(max_id))
+        if (i < j) and (i < n - 1 - j):
+            verh_ch.append(matrix[i][j])
+        if (i < j) and (i > n - 1 - j):
+            pr_ch.append(matrix[i][j])
+        if (i > j) and (i > n - 1 - j):
+            niz_ch.append(matrix[i][j])
+        if (i > j) and (i < n - 1 - j):
+            lv_ch.append(matrix[i][j])
+print(f'''
+Верхняя четверть: {sum(verh_ch)}
+Правая четверть: {sum(pr_ch)}
+Нижняя четверть: {sum(niz_ch)}
+Левая четверть: {sum(lv_ch)}
+      ''')
