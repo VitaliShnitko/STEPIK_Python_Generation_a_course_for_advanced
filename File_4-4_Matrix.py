@@ -87,19 +87,36 @@
 # Напишите программу, которая выводит количество элементов квадратной матрицы в каждой строке,
 # больших среднего арифметического элементов данной строки.
 
+# n = int(input())
+# matrix = []
+#
+# for i in range(n):
+#     temp = [int(num) for num in input().split()]
+#     matrix.append(temp)
+#
+# for i in range(n):
+#     count = 0
+#     s = 0
+#     for j in range(n):
+#         s += matrix[i][j]
+#     for r in range(n):
+#         if matrix[i][r] > s / n:
+#             count += 1
+#     print(count)
+
+
+# Напишите программу, которая выводит максимальный элемент в заштрихованной области квадратной матрицы.
+# Нижнюю часть.
+
 n = int(input())
 matrix = []
-
+max_id = []
 for i in range(n):
     temp = [int(num) for num in input().split()]
     matrix.append(temp)
 
 for i in range(n):
-    count = 0
-    s = 0
     for j in range(n):
-        s += matrix[i][j]
-    for r in range(n):
-        if matrix[i][r] > s / n:
-            count += 1
-    print(count)
+        if i >= j:
+            max_id.append(matrix[i][j])
+print(max(max_id))
