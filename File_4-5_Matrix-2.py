@@ -43,18 +43,44 @@
 
 # Напишите программу, которая проверяет симметричность квадратной матрицы относительно главной диагонали.
 
+# n = int(input())
+# matrix = []
+# flag = 'YES'
+# for i in range(n):
+#     temp = [int(i) for i in input().split()]
+#     matrix.append(temp)
+#
+# for i in range(n):
+#     for j in range(n):
+#         if matrix[i][j] != matrix[j][i]:
+#             flag = 'NO'
+# print(flag)
+
+
+# Дана квадратная матрица чисел.
+# Напишите программу, которая меняет местами элементы,
+# стоящие на главной и побочной диагонали,
+# при этом каждый элемент должен остаться в том же столбце
+# (то есть в каждом столбце нужно поменять местами элемент на
+# главной диагонали и на побочной диагонали).
+
 n = int(input())
 matrix = []
-flag = 'YES'
+
 for i in range(n):
     temp = [int(i) for i in input().split()]
     matrix.append(temp)
+for i in range(len(matrix)):
+    h = matrix[i][i]
+    matrix[i][i] = matrix[n-1-i][i]
+    matrix[n-1-i][i] = h
 
-for i in range(n):
-    for j in range(n):
-        if matrix[i][j] != matrix[j][i]:
-            flag = 'NO'
-print(flag)
+for r in range(n):
+    for c in range(n):
+        print(matrix[r][c], end=' ')
+    print()
+
+
 
 
 
