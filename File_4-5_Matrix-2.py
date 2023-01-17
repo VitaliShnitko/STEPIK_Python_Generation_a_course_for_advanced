@@ -64,24 +64,35 @@
 # (то есть в каждом столбце нужно поменять местами элемент на
 # главной диагонали и на побочной диагонали).
 
+# n = int(input())
+# matrix = []
+#
+# for i in range(n):
+#     temp = [int(i) for i in input().split()]
+#     matrix.append(temp)
+# for i in range(n):
+#     matrix[i][i], matrix[n - i - 1][i] = matrix[n - i - 1][i], matrix[i][i]
+#
+# for r in range(n):
+#     for c in range(n):
+#         print(matrix[r][c], end=' ')
+#     print()
+
+
+# Дана квадратная матрица чисел.
+# Напишите программу, которая зеркально отображает её элементы относительно горизонтальной оси симметрии.
+
 n = int(input())
 matrix = []
 
 for i in range(n):
     temp = [int(i) for i in input().split()]
     matrix.append(temp)
-for i in range(len(matrix)):
-    h = matrix[i][i]
-    matrix[i][i] = matrix[n-1-i][i]
-    matrix[n-1-i][i] = h
 
-for r in range(n):
-    for c in range(n):
-        print(matrix[r][c], end=' ')
-    print()
-
-
-
+for i in range(n // 2):
+    matrix[i], matrix[n-i-1] = matrix[n-i-1], matrix[i]
+for row in matrix:
+    print(*row)
 
 
 
