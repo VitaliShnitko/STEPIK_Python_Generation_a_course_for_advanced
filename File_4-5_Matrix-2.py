@@ -16,13 +16,26 @@
 # Напишите программу, которая находит индексы (строку и столбец)
 # первого вхождения максимального элемента.
 
+# n, m = int(input()), int(input())
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# row, col = 0, 0
+#
+# for i in range(n):
+#     for j in range(m):
+#         if matrix[i][j] > matrix[row][col]:
+#             row, col = i, j
+# print(row, col)
+
+
+# Напишите программу, которая меняет местами столбцы в матрице.
+
 n, m = int(input()), int(input())
 matrix = [[int(i) for i in input().split()] for _ in range(n)]
-row, col = 0, 0
+x, y = [int(i) for i in input().split()]
 
 for i in range(n):
-    for j in range(m):
-        if matrix[i][j] > matrix[row][col]:
-            row, col = i, j
-print(row, col)
-
+    matrix[i][x], matrix[i][y] = matrix[i][y], matrix[i][x]
+for r in range(n):
+    for c in range(m):
+        print(matrix[r][c], end=' ')
+    print()
