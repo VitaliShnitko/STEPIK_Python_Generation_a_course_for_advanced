@@ -97,20 +97,39 @@
 
 # Напишите программу, которая поворачивает квадратную матрицу чисел на 90 градусов по часовой стрелке.
 
-n = int(input())
-matrix = []
-matrix = [[int(i) for i in input().split()] for _ in range(n)]
+# n = int(input())
+# matrix = []
+# matrix = [[int(i) for i in input().split()] for _ in range(n)]
+#
+# for i in range(n // 2):
+#     matrix[i], matrix[n-i-1] = matrix[n-i-1], matrix[i]
+#
+# for r in range(n):
+#     for c in range(n):
+#         print(matrix[c][r], end=' ')
+#     print()
 
-for i in range(n // 2):
-    matrix[i], matrix[n-i-1] = matrix[n-i-1], matrix[i]
 
-for r in range(n):
-    for c in range(n):
-        print(matrix[c][r], end=' ')
-    print()
+# На шахматной доске 8×8 стоит конь. Напишите программу,
+# которая отмечает положение коня на доске и все клетки,
+# которые бьет конь. Клетку, где стоит конь,
+# отметьте английской буквой N, клетки, которые бьет конь,
+# отметьте символами *, остальные клетки заполните точками.
 
+x,y = input()
+n = 8
+matrix = [['.'] * n for _ in range(n)]
+y = n - int(y)
+x = ord(x) - 97
+matrix[y][x] = 'N'
 
+for i in range(n):
+    for q in range(n):
+        if abs(i - y) * abs(q - x) == 2:
+            matrix[i][q] = '*'
 
+for x in range(n):
+    print(*matrix[x])
 
 
 
