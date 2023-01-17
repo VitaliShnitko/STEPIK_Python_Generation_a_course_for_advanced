@@ -82,18 +82,32 @@
 # Дана квадратная матрица чисел.
 # Напишите программу, которая зеркально отображает её элементы относительно горизонтальной оси симметрии.
 
+# n = int(input())
+# matrix = []
+#
+# for i in range(n):
+#     temp = [int(i) for i in input().split()]
+#     matrix.append(temp)
+#
+# for i in range(n // 2):
+#     matrix[i], matrix[n-i-1] = matrix[n-i-1], matrix[i]
+# for row in matrix:
+#     print(*row)
+
+
+# Напишите программу, которая поворачивает квадратную матрицу чисел на 90 градусов по часовой стрелке.
+
 n = int(input())
 matrix = []
-
-for i in range(n):
-    temp = [int(i) for i in input().split()]
-    matrix.append(temp)
+matrix = [[int(i) for i in input().split()] for _ in range(n)]
 
 for i in range(n // 2):
     matrix[i], matrix[n-i-1] = matrix[n-i-1], matrix[i]
-for row in matrix:
-    print(*row)
 
+for r in range(n):
+    for c in range(n):
+        print(matrix[c][r], end=' ')
+    print()
 
 
 
