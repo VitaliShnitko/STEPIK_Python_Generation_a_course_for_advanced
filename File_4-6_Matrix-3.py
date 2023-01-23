@@ -50,48 +50,70 @@
 #     print()
 
 
+# '''
+# На вход программе подаются два натуральных числа
+# n и m. Напишите программу, которая создает матрицу размером
+# n×m и заполняет её числами от
+# 1 до n*m в соответствии с образцом.
+# '''
+#
+# # 1 способ
+#
+# matrix = []
+# x = input().split()
+# n, m = int(x[0]), int(x[1])
+#
+# for _ in range(n):
+#     temp = [i for i in range(m)]
+#     matrix.append(temp)
+#
+#
+# # заполнение числами
+# count = 1
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = count
+#         count += 1
+#
+# # вывод матрицы
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+#
+# # 2 способ
+#
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = i * m + j + 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
 '''
-На вход программе подаются два натуральных числа
-n и m. Напишите программу, которая создает матрицу размером
-n×m и заполняет её числами от
-1 до n*m в соответствии с образцом.
+Заполнене 2
+На вход программе подаются два натуральных числа n и m.
+Напишите программу, которая создает матрицу размером
+n×m заполнив её в соответствии с образцом.
 '''
-
-# 1 способ
-
-matrix = []
-x = input().split()
-n, m = int(x[0]), int(x[1])
-
-for _ in range(n):
-    temp = [i for i in range(m)]
-    matrix.append(temp)
-
-
-# заполнение числами
-count = 1
-for i in range(n):
-    for j in range(m):
-        matrix[i][j] = count
-        count += 1
-
-# вывод матрицы
-for i in range(n):
-    for j in range(m):
-        print(str(matrix[i][j]).ljust(3), end=' ')
-    print()
-
-# 2 способ
 
 n, m = [int(i) for i in input().split()]
 matrix = [[0] * m for _ in range(n)]
 
 for i in range(n):
     for j in range(m):
-        matrix[i][j] = i * m + j + 1
+        matrix[i][j] = i + j * n + 1
 
 for i in range(n):
     for j in range(m):
         print(str(matrix[i][j]).ljust(3), end=' ')
     print()
+
+
 
