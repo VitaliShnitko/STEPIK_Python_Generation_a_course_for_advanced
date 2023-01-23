@@ -96,24 +96,46 @@
 #     print()
 
 
+# '''
+# Заполнене 2
+# На вход программе подаются два натуральных числа n и m.
+# Напишите программу, которая создает матрицу размером
+# n×m заполнив её в соответствии с образцом.
+# '''
+#
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# for i in range(n):
+#     for j in range(m):
+#         matrix[i][j] = i + j * n + 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
 '''
-Заполнене 2
-На вход программе подаются два натуральных числа n и m.
-Напишите программу, которая создает матрицу размером
-n×m заполнив её в соответствии с образцом.
+Заполнение 3
+На вход программе подается натуральное число n.
+ Напишите программу, которая создает матрицу размером
+n×n заполнив её в соответствии с образцом.
 '''
 
-n, m = [int(i) for i in input().split()]
-matrix = [[0] * m for _ in range(n)]
 
+n = int(input())
+matrix = [[0]*n for _ in range(n)]    # создаем квадратную матрицу
+
+# заполняем главную и побочную диагонали единицами
 for i in range(n):
-    for j in range(m):
-        matrix[i][j] = i + j * n + 1
+    matrix[i][n-i-1] = 1
+    for j in range(n):
+        if i == j:
+            matrix[i][j] = 1
 
-for i in range(n):
-    for j in range(m):
-        print(str(matrix[i][j]).ljust(3), end=' ')
-    print()
-
+# выводим матрицу
+for i in matrix:
+    print(*i)
 
 
