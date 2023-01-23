@@ -57,6 +57,8 @@ n×m и заполняет её числами от
 1 до n*m в соответствии с образцом.
 '''
 
+# 1 способ
+
 matrix = []
 x = input().split()
 n, m = int(x[0]), int(x[1])
@@ -78,3 +80,18 @@ for i in range(n):
     for j in range(m):
         print(str(matrix[i][j]).ljust(3), end=' ')
     print()
+
+# 2 способ
+
+n, m = [int(i) for i in input().split()]
+matrix = [[0] * m for _ in range(n)]
+
+for i in range(n):
+    for j in range(m):
+        matrix[i][j] = i * m + j + 1
+
+for i in range(n):
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
