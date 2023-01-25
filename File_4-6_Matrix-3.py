@@ -145,22 +145,44 @@ n×n заполнив её в соответствии с образцом.
 n×n заполнив её в соответствии с образцом.
 '''
 
-# создаем квадратную матрицу
-n = int(input())
-matrix = [[0]*n for _ in range(n)]
+# # создаем квадратную матрицу
+# n = int(input())
+# matrix = [[0]*n for _ in range(n)]
+#
+# # заполняем единицами сначала оси, потом четверти
+# for i in range(n):
+#     matrix[i][i] = 1
+#     matrix[i][n - i - 1] = 1
+#     for j in range(n):
+#         if (i < j) and (i < n - 1 - j):
+#             matrix[i][j] = 1
+#         if (i > j) and (i > n - 1 - j):
+#             matrix[i][j] = 1
+# # выводим матрицу
+# for i in matrix:
+#     print(*i)
 
-# заполняем единицами сначала оси, потом четверти
+
+'''
+Заполнене 5
+На вход программе подаются два натуральных числа 
+n и m. Напишите программу, которая создает матрицу размером 
+n×m заполнив её в соответствии с образцом.
+'''
+
+
+n, m = [int(i) for i in input().split()]
+matrix = [[0] * m for _ in range(n)]
+
 for i in range(n):
-    matrix[i][i] = 1
-    matrix[i][n - i - 1] = 1
-    for j in range(n):
-        if (i < j) and (i < n - 1 - j):
-            matrix[i][j] = 1
-        if (i > j) and (i > n - 1 - j):
-            matrix[i][j] = 1
-# выводим матрицу
-for i in matrix:
-    print(*i)
+    for j in range(m):
+        matrix[i][j] = (i + j) % m + 1
+
+for i in range(n):
+    for j in range(m):
+        print(str(matrix[i][j]).ljust(3), end=' ')
+    print()
+
 
 
 
