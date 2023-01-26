@@ -221,16 +221,58 @@ n×m заполнив её "диагоналями" в соответствии 
 '''
 
 
+# n, m = [int(i) for i in input().split()]
+# matrix = [[0] * m for _ in range(n)]
+#
+# count = 1
+# for k in range(n * m):
+#     for i in range(n):
+#         for j in range(m):
+#             if i + j == k:
+#                 matrix[i][j] = count
+#                 count += 1
+#
+# for i in range(n):
+#     for j in range(m):
+#         print(str(matrix[i][j]).ljust(3), end=' ')
+#     print()
+
+
+'''
+Заполнение спиралью 😈😈
+На вход программе подаются два натуральных числа 
+n и m. Напишите программу, которая создает матрицу размером 
+n×m заполнив её "спиралью" в соответствии с образцом.
+'''
+
+
 n, m = [int(i) for i in input().split()]
 matrix = [[0] * m for _ in range(n)]
 
-count = 1
-for k in range(n * m):
-    for i in range(n):
-        for j in range(m):
-            if i + j == k:
-                matrix[i][j] = count
-                count += 1
+x, y = 0, 0
+d_x, d_y = 0, 1
+matrix[0][0] = 1
+count = 2
+
+while count <= n * m:
+    if 0 <= x + d_x <= n - 1 and 0 <= y + d_y <= m - 1 and matrix[x + d_x][y + d_y] == 0:
+        matrix[x + d_x][y + d_y] = count
+        count += 1
+        x += d_x
+        y += d_y
+    else:
+        if d_y == 1:
+            d_y = 0
+            d_x = 1
+        elif d_x == 1:
+            d_x = 0
+            d_y = -1
+        elif d_y == -1:
+            d_y = 0
+            d_x = -1
+        elif d_x == -1:
+            d_x = 0
+            d_y = 1
 
 for i in range(n):
     for j in range(m):
